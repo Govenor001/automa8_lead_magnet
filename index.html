@@ -182,7 +182,7 @@
 
 	<script>
 		const form = document.querySelector("form.form");
-		const GASUrl = "https://script.google.com/macros/s/AKfycbxMvtYQbN_Mhw9F-xtY_eG2VTyMuWMCXaOHfryarMAeewcKF_DK1ajKgogTTnLYTGf6/exec"
+		const endpoint = "https://primary-production-4497.up.railway.app/webhook/opt-in-submission"
 		const loading = document.querySelector("div.loading");
 
 		if (form && loading) {
@@ -199,16 +199,16 @@
 					return;
 				}
 
-				return fetch(GASUrl, {
-					redirect: "follow",
+				return fetch(endpoint, {
+					// redirect: "follow",
 					method: "POST",
-					body: JSON.stringify({email}),
+					body: email,
 					headers: {
 						"Content-Type": "text/plain;charset=utf-8",
 					},
-				}).then(async (res) => {
-					const data = await res.text()
-					if (data === "success") return window.location.href = "vsl.html";
+				}).then((res) => {
+					console.log(res.ok)
+					if (res.ok) return window.location.href = "vsl.html";
 					else throw "Something went wrong.";
 				}).catch(e => console.log(e))
 			})
