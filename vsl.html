@@ -1,231 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LeadUp Style Landing Page</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/x-icon" href="automa8-logo.jpg">
+	<title>LeadUp Style Landing Page</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-    body {
-      background-color: #131418;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+		body {
+			background-color: #131418;
+			color: white;
+			font-family: 'Poppins', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
 
-    /* Navbar */
-    .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-    }
+		/* Navbar */
+		.navbar {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+		}
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-left: 20px;
-    }
+		.logo-container {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-left: 20px;
+		}
 
-    .logo-image {
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
-    }
+		.logo-image {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;
+		}
 
-    .logo-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-    }
+		.logo-text {
+			font-size: 24px;
+			font-weight: bold;
+			color: white;
+		}
 
-    /* Main container */
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-    }
+		/* Main container */
+		.container {
+			max-width: 1200px;
+			margin: 30px auto;
+			padding: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 20px;
+		}
 
-    /* Left Section */
-    .left-section {
-      width: 52%;
-    }
+		/* Left Section */
+		.left-section {
+			width: 52%;
+		}
 
-    .left-section h1 {
-      font-size: 34px;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
+		.left-section h1 {
+			font-size: 34px;
+			font-weight: 600;
+			line-height: 1.2;
+			margin-bottom: 20px;
+		}
 
-    .sub-subheader {
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+		.sub-subheader {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
 
-    .sub-subheader strong {
-      font-weight: 600;
-    }
+		.sub-subheader strong {
+			font-weight: 600;
+		}
 
-    .left-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
+		.left-section ul {
+			list-style: none;
+			padding: 0;
+			margin: 20px 0;
+		}
 
-    .left-section ul li {
-      margin: 8px 0;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-    }
+		.left-section ul li {
+			margin: 8px 0;
+			font-size: 16px;
+			display: flex;
+			align-items: center;
+		}
 
-    .left-section ul li::before {
-      content: "✓";
-      color: #0080e6;
-      margin-right: 10px;
-      font-weight: bold;
-    }
+		.left-section ul li::before {
+			content: "✓";
+			color: #0080e6;
+			margin-right: 10px;
+			font-weight: bold;
+		}
 
-    /* Right Section */
-    .snippet-box {
-      width: 42%;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+		/* Right Section */
+		.snippet-box {
+			width: 42%;
+			border-radius: 10px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
 
-    .snippet-video video {
-      width: 100%;
-      border-radius: 5px;
-      display: block;
-    }
+		.snippet-video video {
+			width: 100%;
+			border-radius: 5px;
+			display: block;
+		}
 
-    /* Call to Action */
-    .cta-container {
-      width: 100%;
-      text-align: center;
-      margin-top: 40px;
-    }
+		/* Call to Action */
+		.cta-container {
+			width: 100%;
+			text-align: center;
+			margin-top: 40px;
+		}
 
-    .cta-button {
-      display: inline-block;
-      padding: 18px 36px;
-      background-color: #0080e6;
-      color: white;
-      font-size: 21px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 100px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      border: 4px solid #131418;
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-      animation: whiteGlow 3s ease-in-out infinite;
-    }
+		.cta-button {
+			display: inline-block;
+			padding: 18px 36px;
+			background-color: #0080e6;
+			color: white;
+			font-size: 21px;
+			font-weight: 600;
+			text-decoration: none;
+			border-radius: 100px;
+			text-transform: uppercase;
+			transition: all 0.3s ease;
+			border: 4px solid #131418;
+			box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+			animation: whiteGlow 3s ease-in-out infinite;
+		}
 
-    @keyframes whiteGlow {
-      0% {
-        box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
-      }
-      50% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-      }
-      100% {
-        box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
-      }
-    }
+		@keyframes whiteGlow {
+			0% {
+				box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+			}
 
-    .cta-button:hover {
-      background-color: #0066b8;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-    }
+			50% {
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+			}
 
-    /* Footer */
-    .footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 14px;
-      color: #666;
-    }
+			100% {
+				box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+			}
+		}
 
-    /* ✅ Mobile Responsive Fixes */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+		.cta-button:hover {
+			background-color: #0066b8;
+			box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+		}
 
-      .left-section, .snippet-box {
-        width: 100%;
-      }
+		/* Footer */
+		.footer {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 14px;
+			color: #666;
+		}
 
-      .left-section h1 {
-        font-size: 28px;
-      }
+		/* ✅ Mobile Responsive Fixes */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
 
-      .left-section ul {
-        padding-left: 0;
-      }
+			.left-section,
+			.snippet-box {
+				width: 100%;
+			}
 
-      .cta-button {
-        font-size: 18px;
-        padding: 14px 28px;
-      }
-    }
+			.left-section h1 {
+				font-size: 28px;
+			}
 
-  </style>
+			.left-section ul {
+				padding-left: 0;
+			}
+
+			.cta-button {
+				font-size: 18px;
+				padding: 14px 28px;
+			}
+		}
+	</style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo-container">
-      <img src="automa8-logo.jpg" alt="Automa8 AI Logo" class="logo-image">
-      <span class="logo-text">Automa8 AI</span>
-    </div>
-  </div>
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="logo-container">
+			<img src="automa8-logo.jpg" alt="Automa8 AI Logo" class="logo-image">
+			<span class="logo-text">Automa8 AI</span>
+		</div>
+	</div>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="left-section">
-      <div class="header">HELPING AGENCIES AND COACHES</div>
-      <h1>Build Personal Brands That<br> generate qualified sales calls</h1>
-      <div class="sub-subheader">USING THE <strong>BUSINESS INFLUENCER FUNNEL</strong>:</div>
-      <ul>
-        <li>Scale to $100K monthly revenue.</li>
-        <li>Book 50+ Warm Sales Calls Monthly</li>
-        <li>Build authority & visibility within your niche.</li>
-      </ul>
-    </div>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="left-section">
+			<div class="header">HELPING AGENCIES AND COACHES</div>
+			<h1>Build Personal Brands That<br> generate qualified sales calls</h1>
+			<div class="sub-subheader">USING THE <strong>BUSINESS INFLUENCER FUNNEL</strong>:</div>
+			<ul>
+				<li>Scale to $100K monthly revenue.</li>
+				<li>Book 50+ Warm Sales Calls Monthly</li>
+				<li>Build authority & visibility within your niche.</li>
+			</ul>
+		</div>
 
-    <div class="snippet-box">
-      <div class="snippet-video">
-        <video controls autoplay>
-          <source src="IMG_1514.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
+		<div class="snippet-box">
+			<div class="snippet-video">
+				<video controls autoplay>
+					<source src="IMG_1514.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</div>
+	</div>
 
-  <!-- Call to Action -->
-  <div class="cta-container">
-    <a href="form.html" class="cta-button">INTERESTED? LET'S TALK!</a>
-  </div>
+	<!-- Call to Action -->
+	<div class="cta-container">
+		<a href="https://automa8ai.com/#contact" class="cta-button">INTERESTED? LET'S TALK!</a>
+	</div>
 
-  <!-- Footer -->
-  <div class="footer">
-    Copyright 2025. All rights reserved
-  </div>
+	<!-- Footer -->
+	<div class="footer">
+		Copyright 2025. All rights reserved
+	</div>
 
 </body>
+
 </html>

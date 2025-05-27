@@ -1,151 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <style>
-        body {
-            font-family: Inter, sans-serif;
-            text-align: center;
-            background-color: #131418;
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            line-height: 1.3;
-            letter-spacing: -0.02em;
-        }
-        p {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        p:last-of-type {
-            font-size: 13px;
-            color: white;
-            margin-bottom: 20px;
-        }
-        .input-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            border-radius: 5px;
-            overflow: hidden;
-            max-width: 90%;
-            margin: auto;
-            border: 2px solid #0080e6;
-        }
-        input {
-            flex: 1;
-            padding: 12px 16px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-            font-family: Inter, sans-serif;
-            min-width: 180px;
-        }
-        button {
-            padding: 12px 16px;
-            background-color: #0080e6;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            font-family: Inter, sans-serif;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #0066b8;
-        }
-        .hidden-id {
-            color: #000;
-            font-size: 0px;
-        }
-        @media (min-width: 600px) {
-            .input-container {
-                flex-wrap: nowrap;
-                max-width: 400px;
-            }
-            button {
-                width: auto;
-            }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Landing Page</title>
+	<link rel="icon" type="image/x-icon" href="automa8-logo.jpg">
+	<style>
+		body {
+			font-family: Inter, sans-serif;
+			text-align: center;
+			background-color: #131418;
+			color: white;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		/* Navbar */
+		.navbar {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-container {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-left: 20px;
+		}
+
+		.logo-image {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;
+		}
+
+		.logo-text {
+			font-size: 24px;
+			font-weight: bold;
+			color: white;
+		}
+
+		.container {
+			width: 100%;
+			max-width: 70ch;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+
+		h2 {
+			font-size: 24px;
+			font-weight: 600;
+			margin-bottom: 12px;
+			line-height: 1.3;
+			letter-spacing: -0.02em;
+		}
+
+		p {
+			font-size: 14px;
+			color: #888;
+			margin-bottom: 12px;
+			line-height: 1.5;
+		}
+
+		p:last-of-type {
+			font-size: 13px;
+			color: white;
+			margin-bottom: 20px;
+		}
+
+		.form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: white;
+			border-radius: 5px;
+			overflow: hidden;
+			max-width: 90%;
+			margin: auto;
+			border: 2px solid #0080e6;
+		}
+
+		input {
+			flex: 1;
+			padding: 12px 16px;
+			border: none;
+			font-size: 16px;
+			outline: none;
+			font-family: Inter, sans-serif;
+			min-width: 180px;
+		}
+
+		button {
+			padding: 12px 16px;
+			background-color: #0080e6;
+			color: white;
+			border: none;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 500;
+			font-family: Inter, sans-serif;
+			width: 100%;
+		}
+
+		button:hover {
+			background-color: #0066b8;
+		}
+
+		.hidden-id {
+			color: #000;
+			font-size: 0px;
+		}
+
+		@keyframes pulse {
+			0% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0.6;
+			}
+		}
+
+		.loading {
+			/* display: none; */
+			opacity: 0;
+			/* animation-name: pulse; */
+			animation-duration: 750ms;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+			padding: 1rem;
+
+		}
+
+		@media (min-width: 600px) {
+			.form {
+				flex-wrap: nowrap;
+				max-width: 400px;
+			}
+
+			button {
+				width: auto;
+			}
+		}
+	</style>
 </head>
+
 <body>
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="logo-container">
+			<img src="automa8-logo.jpg" alt="Automa8 AI Logo" class="logo-image">
+			<span class="logo-text">Automa8 AI</span>
+		</div>
+	</div>
 
-    <div class="container">
-        <h2>Supercharge your sales strategy with AI-driven insights—boost conversions by up to 30% and close deals faster.</h2>
-        <p>When you provide your email, you'll be subscribed to our<br> newsletter. You can opt out anytime if it's not for you.</p>
-        <div class="input-container">
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button onclick="submitForm()">Get Access Now</button>
-        </div>
-    </div>
+	<div class="container">
+		<h2>Supercharge your sales strategy with AI-driven insights—boost conversions by up to 30% and close deals faster.
+		</h2>
+		<p>When you provide your email, you'll be subscribed to our<br> newsletter. You can opt out anytime if it's not for
+			you.</p>
 
-    <div id="uniqueID" class="hidden-id">1111</div>
+		<form class="form">
+			<input type="email" id="email" placeholder="Enter your email" name="email" required>
+			<button type="submit">Get Access Now</button>
+		</form>
 
-    <script>
-        function submitForm() {
-            let email = document.getElementById("email").value;
-            let id = document.getElementById("uniqueID").innerText.trim();
+		<div class="loading">Loading...</div>
+	</div>
 
-            if (email === "") {
-                alert("Please enter your email.");
-                return;
-            }
 
-            let airtableUrl = "https://api.airtable.com/v0/appDwbk7KTRmJ9nJG/tblZMrlrwI1eKCEAd";
-            let accessToken = "pat4Dddad6zhCP0nP.e0cbdbc23ce109a5d22630ed38dc7a979fc74958af95912eeb6df06d6bf81841";
+	<script>
+		const form = document.querySelector("form.form");
+		const GASUrl = "https://script.google.com/macros/s/AKfycbxMvtYQbN_Mhw9F-xtY_eG2VTyMuWMCXaOHfryarMAeewcKF_DK1ajKgogTTnLYTGf6/exec"
+		const loading = document.querySelector("div.loading");
 
-            let data = {
-                "records": [
-                    {
-                        "fields": {
-                            "Email id": email,
-                            "ID": id
-                        }
-                    }
-                ]
-            };
+		if (form && loading) {
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
 
-            fetch(airtableUrl, {
-                method: "POST",
-                headers: {
-                    "Authorization": "Bearer " + accessToken,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                window.location.href = "vsl.html";
-                document.getElementById("email").value = "";
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Something went wrong. Please try again.");
-            });
-        }
-    </script>
+				loading.style.opacity = "1"
+				loading.style.animationName = "pulse"
 
+				let email = form.email.value;
+
+				if (email === "") {
+					alert("Please enter your email.");
+					return;
+				}
+
+				return fetch(GASUrl, {
+					redirect: "follow",
+					method: "POST",
+					body: JSON.stringify({email}),
+					headers: {
+						"Content-Type": "text/plain;charset=utf-8",
+					},
+				}).then(async (res) => {
+					const data = await res.text()
+					if (data === "success") return window.location.href = "vsl.html";
+					else throw "Something went wrong.";
+				}).catch(e => console.log(e))
+			})
+		}
+	</script>
 </body>
+
 </html>

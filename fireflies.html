@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download JSON</title>
+</head>
+<body>
+    <h2>Click the button to download the JSON file:</h2>
+    
+    <button id="downloadBtn">Download JSON</button>
+
+    <script>
+        document.getElementById("downloadBtn").addEventListener("click", function () {
+            fetch("https://raw.githubusercontent.com/ShreyasGrandhe/meeting-reviewer/main/Fireflies1.json")
+            .then(response => response.blob()) // Convert to a file-like object
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "Fireflies1.json"; // Force download
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url); // Clean up memory
+            })
+            .catch(error => console.error("Error downloading file:", error));
+        });
+    </script>
+
+</body>
+</html>
